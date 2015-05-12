@@ -205,6 +205,7 @@ width: 35px!important; }
 #header-bottom-right #modmail {
 margin: 0;
 top: 0;
+vertical-align: top;
 width: 35px;
 height: 31px;
 border-left: 1px solid #D7CCC8;
@@ -494,6 +495,8 @@ h1.redditname:before { font-size: 14px; content: "welcome to"; display: block; f
 /* RES Use subreddit style button */
 .res .side .titlebox h1+div { text-align: center; background: #eceff1!important; padding: 0 0 10px 0!important;}
 
+.titlebox form.toggle.sr_style_toggle { background: transparent!important; }
+
 /* Subscribe, Dashboard, Shortcut buttons */
 .fancy-toggle-button > .option.add,
 .fancy-toggle-button > .option.remove,
@@ -755,6 +758,19 @@ form input[type=checkbox] { margin: 0 5px 0 0; vertical-align: bottom; }
 .side .md h1:nth-of-type(6) a,
 .side .md h1:nth-of-type(7) a,
 .side .md h1:nth-of-type(8) a { color: #313E3E; }
+
+
+.side .md h1:nth-of-type(10) {
+display: block;
+position: absolute;
+top: 0;
+z-index: 100;
+color: #6e5850;
+border: 0;
+margin: 0;
+padding: 0 20px 0 5px;
+line-height: 27px;
+left: 328px; }
 
 /* Flair filters */
 .side .md blockquote:nth-of-type(1) { margin: 0; border: 0; padding: 0; }
@@ -1762,7 +1778,10 @@ ul.report-reasons { border: 1px solid rgba(0,0,0,0.05); }
 .flair-reading { background: url(%%bookflair%%) left no-repeat rgba(0,0,0,0.02); height: 14px; min-width: 14px; text-indent: 24px; }
 .flair-read { background: url(%%bookflair-read%%) left no-repeat rgba(0,0,0,0.02); height: 14px; min-width: 37px; text-indent: 42px; }
 .flair-reread { background: url(%%bookflair-reread%%) left no-repeat rgba(0,0,0,0.02); height: 14px; min-width: 37px; text-indent: 42px; }
+
+/* don't allow AMA user-flair
 .flair-ama { background: url(%%ama2%%) left no-repeat; height: 12px; min-width: 33px; text-indent: 39px; margin-left: 5px; }
+*/
 
 /* Footer */
 .footer, .footer-parent { margin: 0; padding: 0 0 30px 0; border: 0; border-radius: 0; background: #dfd7d3; }
@@ -1771,7 +1790,7 @@ ul.report-reasons { border: 1px solid rgba(0,0,0,0.05); }
 .footer div.col .title { font-size: 16px; font-weight: bold; padding: 8px; color: #fff; background: #BCAAA4; }
 .footer div.col a { display: block; margin: 5px; padding: 3px 4px 3px 7px; color: #444; }
 .footer div.col a:hover { color: #fff; text-decoration: none; background: #444; }
-.footer { background: #fdfcfc; border: 1px solid #D3CCC8; }
+.footer { background: #fdfcfc; border: 1px solid #D3CCC8; margin: 15px auto; }
 .footer p.bottommenu { clear: left; color: #FFF; padding: 6px; font-weight: bold; }
 .footer p.bottommenu a { font-weight: bold; color: #FFF; }
 .debuginfo { background: #EFEBE9; border-top: 1px solid rgba(0,0,0,0.05); }
@@ -2147,8 +2166,13 @@ text-indent: -9999px;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
 }
+.comments-page .sitetable.nestedlisting>.thing.id-t1_cqawc0s,
+.comments-page .sitetable.nestedlisting>.thing.id-t1_cqvppf9,
+.comments-page .sitetable.nestedlisting>.thing.id-t1_cmdajj7, 
+.comments-page .sitetable.nestedlisting>.thing.id-t1_cpsy4ts,
 .comments-page .sitetable.nestedlisting>.thing.id-t1_cob25rt,
-.comments-page .sitetable.nestedlisting>.thing.id-t1_cmdajj7
+.comments-page .sitetable.nestedlisting>.thing.id-t1_cr4rsej,
+.comments-page .sitetable.nestedlisting>.thing.id-t1_cr5z7oc
 {
     /* dont delete this line BOIB STICKY COMMENTS */
     -webkit-order: -1;
@@ -2156,3 +2180,17 @@ text-indent: -9999px;
     order: -1;
     border: solid 3px green !important;
 }
+
+/* Toolbox fix */
+.pretty-button.inoffensive { background: #cbab7a!important; }
+
+/* Compressed link fix */
+body>.content .link.compressed .midcol { margin-left: 0; }
+.linklisting .link.compressed .entry { padding-left: 5px; }
+.linklisting .link.compressed .score {
+    color: #888888;
+    position: relative;
+    font-size: 10px;
+    margin-left: 0;
+    line-height: normal;
+    border-right: none; }
