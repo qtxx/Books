@@ -5,6 +5,7 @@ Released: February 2015
 Details: /r/books stylesheet
 ---------------------------*/
 
+html { position: relative; }
 body { background-color: #EFEBE9; }
 
 body > .content { margin: 222px 0 0 0; border-top: 22px solid #EFEBE9; }
@@ -771,6 +772,8 @@ margin: 0;
 padding: 0 20px 0 5px;
 line-height: 27px;
 left: 328px; }
+
+.side .md h1:nth-of-type(10) a { color: #b65d6a; }
 
 /* Flair filters */
 .side .md blockquote:nth-of-type(1) { margin: 0; border: 0; padding: 0; }
@@ -2020,7 +2023,11 @@ background: url(%%books-modtools%%) no-repeat; width: 12px; height: 12px; }
     height: 200px;
     margin: 0;
     padding: 0;
-    overflow: hidden; }
+    overflow: hidden;
+-webkit-animation: scroll 60s linear infinite 500ms;
+animation: scroll 60s linear infinite 500ms;
+-webkit-animation-play-state: paused;
+animation-play-state: paused; }
 
 .side .md blockquote:nth-of-type(2):hover {
     -webkit-animation: scroll 60s linear 500ms;
@@ -2166,13 +2173,18 @@ text-indent: -9999px;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
 }
+.comments-page .sitetable.nestedlisting>.thing.id-t1_csa510l,
 .comments-page .sitetable.nestedlisting>.thing.id-t1_cqawc0s,
 .comments-page .sitetable.nestedlisting>.thing.id-t1_cqvppf9,
 .comments-page .sitetable.nestedlisting>.thing.id-t1_cmdajj7, 
 .comments-page .sitetable.nestedlisting>.thing.id-t1_cpsy4ts,
-.comments-page .sitetable.nestedlisting>.thing.id-t1_cob25rt,
+.comments-page .sitetable.nestedlisting>.thing.id-t1_csnsjn4,
 .comments-page .sitetable.nestedlisting>.thing.id-t1_cr4rsej,
-.comments-page .sitetable.nestedlisting>.thing.id-t1_cr5z7oc
+.comments-page .sitetable.nestedlisting>.thing.id-t1_cr5z7oc,
+.comments-page .sitetable.nestedlisting>.thing.id-t1_crassc7,
+.comments-page .sitetable.nestedlisting>.thing.id-t1_cs1t6un,
+.comments-page .sitetable.nestedlisting>.thing.id-t1_cswwp99
+
 {
     /* dont delete this line BOIB STICKY COMMENTS */
     -webkit-order: -1;
@@ -2194,3 +2206,63 @@ body>.content .link.compressed .midcol { margin-left: 0; }
     margin-left: 0;
     line-height: normal;
     border-right: none; }
+
+/* Wiki AMA Table */
+
+.wiki-page-amafullschedule .md.wiki table { margin: 6px 0 0 20px; }
+.wiki-page-amafullschedule .md.wiki thead { display: none; }
+.wiki-page-amafullschedule .md.wiki tr td + td + td { display: block; }
+.wiki-page-amafullschedule .md.wiki td { background: #91C499; display: inline-block; border: 1px solid rgba(0,0,0,0.05); color: #fff; line-height: 21px; }
+.wiki-page-amafullschedule .md.wiki td:nth-of-type(1),
+.wiki-page-amafullschedule .md.wiki td:nth-of-type(2) { height: 21px; padding: 0 10px; }
+.wiki-page-amafullschedule .md.wiki td:nth-of-type(1) { font-size: 11px; }
+.wiki-page-amafullschedule .md.wiki td:nth-of-type(2) { background: #84bd8d; border-left: 0; }
+.wiki-page-amafullschedule .md.wiki td:nth-of-type(3) { padding: 5px 10px; margin-bottom: 9px; }
+.wiki-page-amafullschedule .md.wiki td a { font-weight: bold; color: #fff; }
+.wiki-page-amafullschedule .md.wiki td:nth-of-type(3) a { font-weight: normal; color: #63524b; border-bottom: 1px dotted #988178; }
+.wiki-page-amafullschedule .md.wiki td:last-child { background: #EFEBE9; text-align: left; color: #988178; }
+.wiki-page-amafullschedule .md.wiki tr td + td:hover + td { display: block; }
+
+.wiki-page-amafullschedule .md.wiki table tr td:nth-of-type(1) { background: #91C499; }
+.wiki-page-amafullschedule .md.wiki table tr td:nth-of-type(2),
+.wiki-page-amafullschedule .md.wiki table tr td:nth-of-type(3) { width: auto; }
+
+.goldvertisement, #ad-frame, #ad_main, .sponsorshipbox {
+-moz-transform: scale(0.9);
+-webkit-transform: scale(0.9);
+transform: scale(0.9); }
+
+/* Points flair */
+.flair-points-1,
+.flair-points-2,
+.flair-points-3 {
+font-weight: bold;
+color: #000;
+background: transparent;
+font-size: 10px!important;
+margin-left: 5px; }
+
+.flair-points-1:before,
+.flair-points-2:before,
+.flair-points-3:before {
+display: inline-block;
+content: "";
+width: 18px; height: 14px;
+background: url(%%points-flair%%) center no-repeat;
+vertical-align: middle;
+transition: all 0.2s ease; }
+
+.flair-points-1:before { background-position: -5px -5px; }
+.flair-points-2:before { background-position: -5px -29px; }
+.flair-points-3:before { background-position: -5px -53px; }
+
+.flair-points-1:hover:before,
+.flair-points-2:hover:before,
+.flair-points-3:hover:before {
+content: 'Check out the /r/books wiki for more info -';
+width: auto;
+background-image: none;
+padding: 0 5px;
+vertical-align: middle;
+line-height: 14px;
+transition: all 0.2s ease; }
